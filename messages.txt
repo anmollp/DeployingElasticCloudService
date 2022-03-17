@@ -1,0 +1,591 @@
+---REQUEST---
+GET /?Action=CreateImage&Version=2016-11-15&InstanceId=i-0a0eb490ba1b5013c&Name=Hw2Extension HTTP/1.1
+User-Agent: python-requests/2.27.1
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+x-amz-date: 20220317T204256Z
+x-amz-content-sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Authorization: AWS4-HMAC-SHA256 Credential=AKIAZEEK4MV7OY3EVDHP/20220317/us-east-1/ec2/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=d1fa8c1e3fff54f3cb629192d7ddc9b7f8d9a1029da1eb37b6028a703fe6ab00
+host: ec2.us-east-1.amazonaws.com
+
+---RESPONSE---
+HTTP/1.1 200 OK
+x-amzn-RequestId: 7ce4f15f-6091-4e1b-9f47-83b4b6379c65
+Cache-Control: no-cache, no-store
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 242
+Date: Thu, 17 Mar 2022 20:42:56 GMT
+Keep-Alive: timeout=65
+Connection: keep-alive
+Server: AmazonEC2
+
+<?xml version="1.0" encoding="UTF-8"?>
+<CreateImageResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>7ce4f15f-6091-4e1b-9f47-83b4b6379c65</requestId>
+    <imageId>ami-021ca2b5c83bdc64c</imageId>
+</CreateImageResponse>
+
+---REQUEST---
+GET /?Action=CreateSecurityGroup&Version=2016-11-15&GroupName=Hw2ExtensionSG&GroupDescription=Hw2Swarm&VpcId=vpc-08de330c45d57b992 HTTP/1.1
+User-Agent: python-requests/2.27.1
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+x-amz-date: 20220317T204257Z
+x-amz-content-sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Authorization: AWS4-HMAC-SHA256 Credential=AKIAZEEK4MV7OY3EVDHP/20220317/us-east-1/ec2/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=0204e77d599877b89bbb93ea3823826742f4fb6a965dbaaeb88ff5f76b49b673
+host: ec2.us-east-1.amazonaws.com
+
+---RESPONSE---
+HTTP/1.1 200 OK
+x-amzn-RequestId: 26468892-5c74-4fd5-aec1-10c1be1751d9
+Cache-Control: no-cache, no-store
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 283
+Date: Thu, 17 Mar 2022 20:42:57 GMT
+Keep-Alive: timeout=65
+Connection: keep-alive
+Server: AmazonEC2
+
+<?xml version="1.0" encoding="UTF-8"?>
+<CreateSecurityGroupResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>26468892-5c74-4fd5-aec1-10c1be1751d9</requestId>
+    <return>true</return>
+    <groupId>sg-09d6e6b57c35e30ee</groupId>
+</CreateSecurityGroupResponse>
+
+---REQUEST---
+GET /?Action=AuthorizeSecurityGroupIngress&Version=2016-11-15&GroupId=sg-09d6e6b57c35e30ee&IpPermissions.1.IpProtocol=tcp&IpPermissions.1.FromPort=8888&IpPermissions.1.ToPort=8888&IpPermissions.1.IpRanges.1.CidrIp=0.0.0.0/0&IpPermissions.2.IpProtocol=tcp&IpPermissions.2.FromPort=22&IpPermissions.2.ToPort=22&IpPermissions.2.IpRanges.1.CidrIp=0.0.0.0/0&IpPermissions.3.IpProtocol=tcp&IpPermissions.3.FromPort=80&IpPermissions.3.ToPort=80&IpPermissions.3.IpRanges.1.CidrIp=0.0.0.0/0 HTTP/1.1
+User-Agent: python-requests/2.27.1
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+x-amz-date: 20220317T204257Z
+x-amz-content-sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Authorization: AWS4-HMAC-SHA256 Credential=AKIAZEEK4MV7OY3EVDHP/20220317/us-east-1/ec2/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=d2fb1f06cbf280dc05b3445eb85d082f9d17342778cf5ac6187565a8d5cdf617
+host: ec2.us-east-1.amazonaws.com
+
+---RESPONSE---
+HTTP/1.1 200 OK
+x-amzn-RequestId: 9c5d64da-e167-4d03-ba0e-5d6d865c0cd4
+Cache-Control: no-cache, no-store
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 1533
+Date: Thu, 17 Mar 2022 20:42:57 GMT
+Keep-Alive: timeout=65
+Connection: keep-alive
+Server: AmazonEC2
+
+<?xml version="1.0" encoding="UTF-8"?>
+<AuthorizeSecurityGroupIngressResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>9c5d64da-e167-4d03-ba0e-5d6d865c0cd4</requestId>
+    <return>true</return>
+    <securityGroupRuleSet>
+        <item>
+            <groupOwnerId>627356493182</groupOwnerId>
+            <groupId>sg-09d6e6b57c35e30ee</groupId>
+            <securityGroupRuleId>sgr-07b728d0dfaaa8a42</securityGroupRuleId>
+            <isEgress>false</isEgress>
+            <ipProtocol>tcp</ipProtocol>
+            <fromPort>8888</fromPort>
+            <toPort>8888</toPort>
+            <cidrIpv4>0.0.0.0/0</cidrIpv4>
+        </item>
+        <item>
+            <groupOwnerId>627356493182</groupOwnerId>
+            <groupId>sg-09d6e6b57c35e30ee</groupId>
+            <securityGroupRuleId>sgr-0cc94ae411dbc22a0</securityGroupRuleId>
+            <isEgress>false</isEgress>
+            <ipProtocol>tcp</ipProtocol>
+            <fromPort>22</fromPort>
+            <toPort>22</toPort>
+            <cidrIpv4>0.0.0.0/0</cidrIpv4>
+        </item>
+        <item>
+            <groupOwnerId>627356493182</groupOwnerId>
+            <groupId>sg-09d6e6b57c35e30ee</groupId>
+            <securityGroupRuleId>sgr-0d17a5a6e2b763fe4</securityGroupRuleId>
+            <isEgress>false</isEgress>
+            <ipProtocol>tcp</ipProtocol>
+            <fromPort>80</fromPort>
+            <toPort>80</toPort>
+            <cidrIpv4>0.0.0.0/0</cidrIpv4>
+        </item>
+    </securityGroupRuleSet>
+</AuthorizeSecurityGroupIngressResponse>
+
+---REQUEST---
+GET /?Action=CreateLaunchTemplate&Version=2016-11-15&LaunchTemplateName=Hw2Extension&VersionDescription=APIVersion&LaunchTemplateData.SecurityGroupId=sg-09d6e6b57c35e30ee&LaunchTemplateData.ImageId=ami-021ca2b5c83bdc64c&LaunchTemplateData.KeyName=eel6761&LaunchTemplateData.InstanceType=t2.micro&LaunchTemplateData.Placement.AvailabilityZone=us-east-1 HTTP/1.1
+User-Agent: python-requests/2.27.1
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+x-amz-date: 20220317T204258Z
+x-amz-content-sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Authorization: AWS4-HMAC-SHA256 Credential=AKIAZEEK4MV7OY3EVDHP/20220317/us-east-1/ec2/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=25d939ffc941c54119768e988f465fc4bad0061ec2ab625b15f59f14712a2260
+host: ec2.us-east-1.amazonaws.com
+
+---RESPONSE---
+HTTP/1.1 200 OK
+x-amzn-RequestId: 0910b54a-7559-41dd-b44c-309d5502fd8f
+Cache-Control: no-cache, no-store
+vary: accept-encoding
+Content-Encoding: gzip
+Content-Type: text/xml;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 17 Mar 2022 20:42:58 GMT
+Keep-Alive: timeout=65
+Connection: keep-alive
+Server: AmazonEC2
+
+<?xml version="1.0" encoding="UTF-8"?>
+<CreateLaunchTemplateResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>0910b54a-7559-41dd-b44c-309d5502fd8f</requestId>
+    <launchTemplate>
+        <createTime>2022-03-17T20:42:58.000Z</createTime>
+        <createdBy>arn:aws:iam::627356493182:root</createdBy>
+        <defaultVersionNumber>1</defaultVersionNumber>
+        <latestVersionNumber>1</latestVersionNumber>
+        <launchTemplateId>lt-00a928954376e8375</launchTemplateId>
+        <launchTemplateName>Hw2Extension</launchTemplateName>
+    </launchTemplate>
+</CreateLaunchTemplateResponse>
+---REQUEST---
+GET /?Action=DescribeSubnets&Version=2016-11-15 HTTP/1.1
+User-Agent: python-requests/2.27.1
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+x-amz-date: 20220317T204258Z
+x-amz-content-sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Authorization: AWS4-HMAC-SHA256 Credential=AKIAZEEK4MV7OY3EVDHP/20220317/us-east-1/ec2/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=d2f6ef8609e12003eb908a8dc7bf146584e81c1f80cb9ef7b592385aa44495b2
+host: ec2.us-east-1.amazonaws.com
+
+---RESPONSE---
+HTTP/1.1 200 OK
+x-amzn-RequestId: b0b4c9b9-8eae-4ef9-9266-38e7395a532b
+Cache-Control: no-cache, no-store
+vary: accept-encoding
+Content-Encoding: gzip
+Content-Type: text/xml;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 17 Mar 2022 20:42:58 GMT
+Keep-Alive: timeout=65
+Connection: keep-alive
+Server: AmazonEC2
+
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeSubnetsResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>b0b4c9b9-8eae-4ef9-9266-38e7395a532b</requestId>
+    <subnetSet>
+        <item>
+            <subnetId>subnet-0d3147f09bdd1c983</subnetId>
+            <subnetArn>arn:aws:ec2:us-east-1:627356493182:subnet/subnet-0d3147f09bdd1c983</subnetArn>
+            <state>available</state>
+            <ownerId>627356493182</ownerId>
+            <vpcId>vpc-08de330c45d57b992</vpcId>
+            <cidrBlock>172.31.48.0/20</cidrBlock>
+            <ipv6CidrBlockAssociationSet/>
+            <availableIpAddressCount>4090</availableIpAddressCount>
+            <availabilityZone>us-east-1e</availabilityZone>
+            <availabilityZoneId>use1-az3</availabilityZoneId>
+            <defaultForAz>true</defaultForAz>
+            <mapPublicIpOnLaunch>true</mapPublicIpOnLaunch>
+            <assignIpv6AddressOnCreation>false</assignIpv6AddressOnCreation>
+            <mapCustomerOwnedIpOnLaunch>false</mapCustomerOwnedIpOnLaunch>
+            <privateDnsNameOptionsOnLaunch>
+                <hostnameType>ip-name</hostnameType>
+                <enableResourceNameDnsARecord>false</enableResourceNameDnsARecord>
+                <enableResourceNameDnsAAAARecord>false</enableResourceNameDnsAAAARecord>
+            </privateDnsNameOptionsOnLaunch>
+            <ipv6Native>false</ipv6Native>
+            <enableDns64>false</enableDns64>
+        </item>
+        <item>
+            <subnetId>subnet-08773bb0e7439d66d</subnetId>
+            <subnetArn>arn:aws:ec2:us-east-1:627356493182:subnet/subnet-08773bb0e7439d66d</subnetArn>
+            <state>available</state>
+            <ownerId>627356493182</ownerId>
+            <vpcId>vpc-08de330c45d57b992</vpcId>
+            <cidrBlock>172.31.80.0/20</cidrBlock>
+            <ipv6CidrBlockAssociationSet/>
+            <availableIpAddressCount>4090</availableIpAddressCount>
+            <availabilityZone>us-east-1d</availabilityZone>
+            <availabilityZoneId>use1-az2</availabilityZoneId>
+            <defaultForAz>true</defaultForAz>
+            <mapPublicIpOnLaunch>true</mapPublicIpOnLaunch>
+            <assignIpv6AddressOnCreation>false</assignIpv6AddressOnCreation>
+            <mapCustomerOwnedIpOnLaunch>false</mapCustomerOwnedIpOnLaunch>
+            <privateDnsNameOptionsOnLaunch>
+                <hostnameType>ip-name</hostnameType>
+                <enableResourceNameDnsARecord>false</enableResourceNameDnsARecord>
+                <enableResourceNameDnsAAAARecord>false</enableResourceNameDnsAAAARecord>
+            </privateDnsNameOptionsOnLaunch>
+            <ipv6Native>false</ipv6Native>
+            <enableDns64>false</enableDns64>
+        </item>
+        <item>
+            <subnetId>subnet-01ce8a463abbc6709</subnetId>
+            <subnetArn>arn:aws:ec2:us-east-1:627356493182:subnet/subnet-01ce8a463abbc6709</subnetArn>
+            <state>available</state>
+            <ownerId>627356493182</ownerId>
+            <vpcId>vpc-08de330c45d57b992</vpcId>
+            <cidrBlock>172.31.64.0/20</cidrBlock>
+            <ipv6CidrBlockAssociationSet/>
+            <availableIpAddressCount>4091</availableIpAddressCount>
+            <availabilityZone>us-east-1f</availabilityZone>
+            <availabilityZoneId>use1-az5</availabilityZoneId>
+            <defaultForAz>true</defaultForAz>
+            <mapPublicIpOnLaunch>true</mapPublicIpOnLaunch>
+            <assignIpv6AddressOnCreation>false</assignIpv6AddressOnCreation>
+            <mapCustomerOwnedIpOnLaunch>false</mapCustomerOwnedIpOnLaunch>
+            <privateDnsNameOptionsOnLaunch>
+                <hostnameType>ip-name</hostnameType>
+                <enableResourceNameDnsARecord>false</enableResourceNameDnsARecord>
+                <enableResourceNameDnsAAAARecord>false</enableResourceNameDnsAAAARecord>
+            </privateDnsNameOptionsOnLaunch>
+            <ipv6Native>false</ipv6Native>
+            <enableDns64>false</enableDns64>
+        </item>
+        <item>
+            <subnetId>subnet-03cf75d2344c20467</subnetId>
+            <subnetArn>arn:aws:ec2:us-east-1:627356493182:subnet/subnet-03cf75d2344c20467</subnetArn>
+            <state>available</state>
+            <ownerId>627356493182</ownerId>
+            <vpcId>vpc-08de330c45d57b992</vpcId>
+            <cidrBlock>172.31.16.0/20</cidrBlock>
+            <ipv6CidrBlockAssociationSet/>
+            <availableIpAddressCount>4090</availableIpAddressCount>
+            <availabilityZone>us-east-1a</availabilityZone>
+            <availabilityZoneId>use1-az4</availabilityZoneId>
+            <defaultForAz>true</defaultForAz>
+            <mapPublicIpOnLaunch>true</mapPublicIpOnLaunch>
+            <assignIpv6AddressOnCreation>false</assignIpv6AddressOnCreation>
+            <mapCustomerOwnedIpOnLaunch>false</mapCustomerOwnedIpOnLaunch>
+            <privateDnsNameOptionsOnLaunch>
+                <hostnameType>ip-name</hostnameType>
+                <enableResourceNameDnsARecord>false</enableResourceNameDnsARecord>
+                <enableResourceNameDnsAAAARecord>false</enableResourceNameDnsAAAARecord>
+            </privateDnsNameOptionsOnLaunch>
+            <ipv6Native>false</ipv6Native>
+            <enableDns64>false</enableDns64>
+        </item>
+        <item>
+            <subnetId>subnet-0233323949fdff447</subnetId>
+            <subnetArn>arn:aws:ec2:us-east-1:627356493182:subnet/subnet-0233323949fdff447</subnetArn>
+            <state>available</state>
+            <ownerId>627356493182</ownerId>
+            <vpcId>vpc-08de330c45d57b992</vpcId>
+            <cidrBlock>172.31.32.0/20</cidrBlock>
+            <ipv6CidrBlockAssociationSet/>
+            <availableIpAddressCount>4091</availableIpAddressCount>
+            <availabilityZone>us-east-1b</availabilityZone>
+            <availabilityZoneId>use1-az6</availabilityZoneId>
+            <defaultForAz>true</defaultForAz>
+            <mapPublicIpOnLaunch>true</mapPublicIpOnLaunch>
+            <assignIpv6AddressOnCreation>false</assignIpv6AddressOnCreation>
+            <mapCustomerOwnedIpOnLaunch>false</mapCustomerOwnedIpOnLaunch>
+            <privateDnsNameOptionsOnLaunch>
+                <hostnameType>ip-name</hostnameType>
+                <enableResourceNameDnsARecord>false</enableResourceNameDnsARecord>
+                <enableResourceNameDnsAAAARecord>false</enableResourceNameDnsAAAARecord>
+            </privateDnsNameOptionsOnLaunch>
+            <ipv6Native>false</ipv6Native>
+            <enableDns64>false</enableDns64>
+        </item>
+        <item>
+            <subnetId>subnet-0df83be9e7d39e53f</subnetId>
+            <subnetArn>arn:aws:ec2:us-east-1:627356493182:subnet/subnet-0df83be9e7d39e53f</subnetArn>
+            <state>available</state>
+            <ownerId>627356493182</ownerId>
+            <vpcId>vpc-08de330c45d57b992</vpcId>
+            <cidrBlock>172.31.0.0/20</cidrBlock>
+            <ipv6CidrBlockAssociationSet/>
+            <availableIpAddressCount>4090</availableIpAddressCount>
+            <availabilityZone>us-east-1c</availabilityZone>
+            <availabilityZoneId>use1-az1</availabilityZoneId>
+            <defaultForAz>true</defaultForAz>
+            <mapPublicIpOnLaunch>true</mapPublicIpOnLaunch>
+            <assignIpv6AddressOnCreation>false</assignIpv6AddressOnCreation>
+            <mapCustomerOwnedIpOnLaunch>false</mapCustomerOwnedIpOnLaunch>
+            <privateDnsNameOptionsOnLaunch>
+                <hostnameType>ip-name</hostnameType>
+                <enableResourceNameDnsARecord>false</enableResourceNameDnsARecord>
+                <enableResourceNameDnsAAAARecord>false</enableResourceNameDnsAAAARecord>
+            </privateDnsNameOptionsOnLaunch>
+            <ipv6Native>false</ipv6Native>
+            <enableDns64>false</enableDns64>
+        </item>
+    </subnetSet>
+</DescribeSubnetsResponse>
+---REQUEST---
+GET /?Action=CreateLoadBalancer&Name=Hw2ExtensionLoadBalancer&Version=2015-12-01&SecurityGroups.member.1=sg-09d6e6b57c35e30ee&Subnets.member.1=subnet-0d3147f09bdd1c983&Subnets.member.2=subnet-08773bb0e7439d66d HTTP/1.1
+User-Agent: python-requests/2.27.1
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+x-amz-date: 20220317T204259Z
+x-amz-content-sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Authorization: AWS4-HMAC-SHA256 Credential=AKIAZEEK4MV7OY3EVDHP/20220317/us-east-1/elasticloadbalancing/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=2aee7cb98b714151a0cda046b5802f8f089408b6daeb4f6c02ea07faed906b40
+host: elasticloadbalancing.us-east-1.amazonaws.com
+
+---RESPONSE---
+HTTP/1.1 200 OK
+x-amzn-RequestId: adcb22e9-896b-4c32-a66f-b289c838f4b9
+Content-Type: text/xml
+Content-Length: 1552
+Date: Thu, 17 Mar 2022 20:42:58 GMT
+Keep-Alive: timeout=5
+Connection: keep-alive
+
+<CreateLoadBalancerResponse xmlns="http://elasticloadbalancing.amazonaws.com/doc/2015-12-01/">
+  <CreateLoadBalancerResult>
+    <LoadBalancers>
+      <member>
+        <LoadBalancerArn>arn:aws:elasticloadbalancing:us-east-1:627356493182:loadbalancer/app/Hw2ExtensionLoadBalancer/b023946e85e4bc79</LoadBalancerArn>
+        <Scheme>internet-facing</Scheme>
+        <AvailabilityZones>
+          <member>
+            <SubnetId>subnet-08773bb0e7439d66d</SubnetId>
+            <ZoneName>us-east-1d</ZoneName>
+            <LoadBalancerAddresses/>
+          </member>
+          <member>
+            <SubnetId>subnet-0d3147f09bdd1c983</SubnetId>
+            <ZoneName>us-east-1e</ZoneName>
+            <LoadBalancerAddresses/>
+          </member>
+        </AvailabilityZones>
+        <DNSName>Hw2ExtensionLoadBalancer-1208456836.us-east-1.elb.amazonaws.com</DNSName>
+        <Type>application</Type>
+        <IpAddressType>ipv4</IpAddressType>
+        <LoadBalancerName>Hw2ExtensionLoadBalancer</LoadBalancerName>
+        <VpcId>vpc-08de330c45d57b992</VpcId>
+        <CanonicalHostedZoneId>Z35SXDOTRQ7X7K</CanonicalHostedZoneId>
+        <CreatedTime>2022-03-17T20:42:59.650Z</CreatedTime>
+        <SecurityGroups>
+          <member>sg-09d6e6b57c35e30ee</member>
+        </SecurityGroups>
+        <State>
+          <Code>provisioning</Code>
+        </State>
+      </member>
+    </LoadBalancers>
+  </CreateLoadBalancerResult>
+  <ResponseMetadata>
+    <RequestId>adcb22e9-896b-4c32-a66f-b289c838f4b9</RequestId>
+  </ResponseMetadata>
+</CreateLoadBalancerResponse>
+
+---REQUEST---
+GET /?Action=DescribeVpcs&Version=2016-11-15 HTTP/1.1
+User-Agent: python-requests/2.27.1
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+x-amz-date: 20220317T204259Z
+x-amz-content-sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Authorization: AWS4-HMAC-SHA256 Credential=AKIAZEEK4MV7OY3EVDHP/20220317/us-east-1/ec2/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=a504da49bf04fc3526446d282ad794f2a5fff0fa4756500536eaa56f291b2e22
+host: ec2.us-east-1.amazonaws.com
+
+---RESPONSE---
+HTTP/1.1 200 OK
+x-amzn-RequestId: b3669b64-ffa7-417c-94ab-2ade811d63ac
+Cache-Control: no-cache, no-store
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 986
+Date: Thu, 17 Mar 2022 20:42:59 GMT
+Keep-Alive: timeout=65
+Connection: keep-alive
+Server: AmazonEC2
+
+<?xml version="1.0" encoding="UTF-8"?>
+<DescribeVpcsResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">
+    <requestId>b3669b64-ffa7-417c-94ab-2ade811d63ac</requestId>
+    <vpcSet>
+        <item>
+            <vpcId>vpc-08de330c45d57b992</vpcId>
+            <ownerId>627356493182</ownerId>
+            <state>available</state>
+            <cidrBlock>172.31.0.0/16</cidrBlock>
+            <cidrBlockAssociationSet>
+                <item>
+                    <cidrBlock>172.31.0.0/16</cidrBlock>
+                    <associationId>vpc-cidr-assoc-09763d589c99f2d38</associationId>
+                    <cidrBlockState>
+                        <state>associated</state>
+                    </cidrBlockState>
+                </item>
+            </cidrBlockAssociationSet>
+            <dhcpOptionsId>dopt-0813a654fcdf8b5db</dhcpOptionsId>
+            <instanceTenancy>default</instanceTenancy>
+            <isDefault>true</isDefault>
+        </item>
+    </vpcSet>
+</DescribeVpcsResponse>
+---REQUEST---
+GET /?Action=CreateTargetGroup&Name=Hw2Extension-targets&HealthyThresholdCount=5&UnhealthyThresholdCount=5&Matcher.HttpCode=200,302&Protocol=HTTP&Port=8888&VpcId=vpc-08de330c45d57b992&TargetType=instance&Version=2015-12-01 HTTP/1.1
+User-Agent: python-requests/2.27.1
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+x-amz-date: 20220317T204259Z
+x-amz-content-sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Authorization: AWS4-HMAC-SHA256 Credential=AKIAZEEK4MV7OY3EVDHP/20220317/us-east-1/elasticloadbalancing/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=c1bbb87ac0f9d37d8677a3dce0ed5fd865c3a3f4b586e65a7504834119571339
+host: elasticloadbalancing.amazonaws.com
+
+---RESPONSE---
+HTTP/1.1 200 OK
+x-amzn-RequestId: 9e108a42-dab4-4664-8f4d-db09502566cd
+Content-Type: text/xml
+Content-Length: 1342
+Date: Thu, 17 Mar 2022 20:42:59 GMT
+Keep-Alive: timeout=5
+Connection: keep-alive
+
+<CreateTargetGroupResponse xmlns="http://elasticloadbalancing.amazonaws.com/doc/2015-12-01/">
+  <CreateTargetGroupResult>
+    <TargetGroups>
+      <member>
+        <HealthCheckEnabled>true</HealthCheckEnabled>
+        <TargetGroupArn>arn:aws:elasticloadbalancing:us-east-1:627356493182:targetgroup/Hw2Extension-targets/0ffd0bb5f59c120f</TargetGroupArn>
+        <HealthCheckTimeoutSeconds>5</HealthCheckTimeoutSeconds>
+        <HealthCheckPort>traffic-port</HealthCheckPort>
+        <TargetType>instance</TargetType>
+        <Matcher>
+          <HttpCode>200,302</HttpCode>
+        </Matcher>
+        <HealthCheckProtocol>HTTP</HealthCheckProtocol>
+        <TargetGroupName>Hw2Extension-targets</TargetGroupName>
+        <IpAddressType>ipv4</IpAddressType>
+        <Protocol>HTTP</Protocol>
+        <HealthCheckPath>/</HealthCheckPath>
+        <Port>8888</Port>
+        <VpcId>vpc-08de330c45d57b992</VpcId>
+        <HealthyThresholdCount>5</HealthyThresholdCount>
+        <HealthCheckIntervalSeconds>30</HealthCheckIntervalSeconds>
+        <ProtocolVersion>HTTP1</ProtocolVersion>
+        <UnhealthyThresholdCount>5</UnhealthyThresholdCount>
+      </member>
+    </TargetGroups>
+  </CreateTargetGroupResult>
+  <ResponseMetadata>
+    <RequestId>9e108a42-dab4-4664-8f4d-db09502566cd</RequestId>
+  </ResponseMetadata>
+</CreateTargetGroupResponse>
+
+---REQUEST---
+GET /?Action=CreateListener&LoadBalancerArn=arn:aws:elasticloadbalancing:us-east-1:627356493182:loadbalancer/app/Hw2ExtensionLoadBalancer/b023946e85e4bc79&Protocol=HTTP&Port=8888&DefaultActions.member.1.Type=forward&DefaultActions.member.1.TargetGroupArn=arn:aws:elasticloadbalancing:us-east-1:627356493182:targetgroup/Hw2Extension-targets/0ffd0bb5f59c120f&Version=2015-12-01 HTTP/1.1
+User-Agent: python-requests/2.27.1
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+x-amz-date: 20220317T204300Z
+x-amz-content-sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Authorization: AWS4-HMAC-SHA256 Credential=AKIAZEEK4MV7OY3EVDHP/20220317/us-east-1/elasticloadbalancing/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=4166cbe40da52e0826fb16395e42d0fea9f46394ce107c8b1b03453d369e0e25
+host: elasticloadbalancing.amazonaws.com
+
+---RESPONSE---
+HTTP/1.1 200 OK
+x-amzn-RequestId: 8e63a8eb-f62b-4686-b6a1-0a7ae0ce42de
+Content-Type: text/xml
+Content-Length: 1469
+Date: Thu, 17 Mar 2022 20:43:00 GMT
+Keep-Alive: timeout=5
+Connection: keep-alive
+
+<CreateListenerResponse xmlns="http://elasticloadbalancing.amazonaws.com/doc/2015-12-01/">
+  <CreateListenerResult>
+    <Listeners>
+      <member>
+        <LoadBalancerArn>arn:aws:elasticloadbalancing:us-east-1:627356493182:loadbalancer/app/Hw2ExtensionLoadBalancer/b023946e85e4bc79</LoadBalancerArn>
+        <Protocol>HTTP</Protocol>
+        <Port>8888</Port>
+        <ListenerArn>arn:aws:elasticloadbalancing:us-east-1:627356493182:listener/app/Hw2ExtensionLoadBalancer/b023946e85e4bc79/b1c15031e0f85b75</ListenerArn>
+        <DefaultActions>
+          <member>
+            <TargetGroupArn>arn:aws:elasticloadbalancing:us-east-1:627356493182:targetgroup/Hw2Extension-targets/0ffd0bb5f59c120f</TargetGroupArn>
+            <ForwardConfig>
+              <TargetGroupStickinessConfig>
+                <Enabled>false</Enabled>
+              </TargetGroupStickinessConfig>
+              <TargetGroups>
+                <member>
+                  <Weight>1</Weight>
+                  <TargetGroupArn>arn:aws:elasticloadbalancing:us-east-1:627356493182:targetgroup/Hw2Extension-targets/0ffd0bb5f59c120f</TargetGroupArn>
+                </member>
+              </TargetGroups>
+            </ForwardConfig>
+            <Type>forward</Type>
+          </member>
+        </DefaultActions>
+      </member>
+    </Listeners>
+  </CreateListenerResult>
+  <ResponseMetadata>
+    <RequestId>8e63a8eb-f62b-4686-b6a1-0a7ae0ce42de</RequestId>
+  </ResponseMetadata>
+</CreateListenerResponse>
+
+---REQUEST---
+GET /?Action=CreateAutoScalingGroup&AutoScalingGroupName=Hw2ExtensionAutoScaling&TargetGroupARNs.member.1=arn:aws:elasticloadbalancing:us-east-1:627356493182:targetgroup/Hw2Extension-targets/0ffd0bb5f59c120f&VPCZoneIdentifier=subnet-0d3147f09bdd1c983,subnet-08773bb0e7439d66d&HealthCheckGracePeriod=300&MinSize=1&MaxSize=3&DesiredCapacity=1&DefaultCooldown=30&LaunchTemplate.LaunchTemplateName=Hw2Extension&LaunchTemplate.Version=$Default&Version=2011-01-01 HTTP/1.1
+User-Agent: python-requests/2.27.1
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+x-amz-date: 20220317T204300Z
+x-amz-content-sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Authorization: AWS4-HMAC-SHA256 Credential=AKIAZEEK4MV7OY3EVDHP/20220317/us-east-1/autoscaling/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=fe48ac4fe9a1fa1033d9d19c1631aa681c56ded44175c80f21c3481af2f3c880
+host: autoscaling.us-east-1.amazonaws.com
+
+---RESPONSE---
+HTTP/1.1 200 OK
+x-amzn-RequestId: 3d3e3ea2-76bc-4404-aa97-f0aa40533d0e
+Content-Type: text/xml
+Content-Length: 231
+Date: Thu, 17 Mar 2022 20:43:01 GMT
+
+<CreateAutoScalingGroupResponse xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
+  <ResponseMetadata>
+    <RequestId>3d3e3ea2-76bc-4404-aa97-f0aa40533d0e</RequestId>
+  </ResponseMetadata>
+</CreateAutoScalingGroupResponse>
+
+---REQUEST---
+GET /?Action=PutScalingPolicy&AutoScalingGroupName=Hw2ExtensionAutoScaling&PolicyName=Hw2ExtensionPolicy&PolicyType=TargetTrackingScaling&TargetTrackingConfiguration.TargetValue=30.0&TargetTrackingConfiguration.PredefinedMetricSpecification.PredefinedMetricType=ASGAverageCPUUtilization&TargetTrackingConfiguration.ScaleOutCooldown=200&TargetTrackingConfiguration.ScaleInCooldown=200&Version=2011-01-01&DryRun=true HTTP/1.1
+User-Agent: python-requests/2.27.1
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+x-amz-date: 20220317T204302Z
+x-amz-content-sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Authorization: AWS4-HMAC-SHA256 Credential=AKIAZEEK4MV7OY3EVDHP/20220317/us-east-1/autoscaling/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=1505c037238d35027ff57859f08f712111c805498d35c99861ab69cc3c9f4ec7
+host: autoscaling.us-east-1.amazonaws.com
+
+---RESPONSE---
+HTTP/1.1 200 OK
+x-amzn-RequestId: 0b13ff1f-8131-4684-82fa-62d713ee2aa7
+Content-Type: text/xml
+Content-Length: 1117
+Date: Thu, 17 Mar 2022 20:43:03 GMT
+
+<PutScalingPolicyResponse xmlns="http://autoscaling.amazonaws.com/doc/2011-01-01/">
+  <PutScalingPolicyResult>
+    <PolicyARN>arn:aws:autoscaling:us-east-1:627356493182:scalingPolicy:4d2ec933-7ca7-4481-9e4a-efa6be8ff2dc:autoScalingGroupName/Hw2ExtensionAutoScaling:policyName/Hw2ExtensionPolicy</PolicyARN>
+    <Alarms>
+      <member>
+        <AlarmName>TargetTracking-Hw2ExtensionAutoScaling-AlarmHigh-39f859b5-b806-44a9-a72f-2eda5c362dac</AlarmName>
+        <AlarmARN>arn:aws:cloudwatch:us-east-1:627356493182:alarm:TargetTracking-Hw2ExtensionAutoScaling-AlarmHigh-39f859b5-b806-44a9-a72f-2eda5c362dac</AlarmARN>
+      </member>
+      <member>
+        <AlarmName>TargetTracking-Hw2ExtensionAutoScaling-AlarmLow-891e0671-dbca-4fbc-b804-98b4e7967f96</AlarmName>
+        <AlarmARN>arn:aws:cloudwatch:us-east-1:627356493182:alarm:TargetTracking-Hw2ExtensionAutoScaling-AlarmLow-891e0671-dbca-4fbc-b804-98b4e7967f96</AlarmARN>
+      </member>
+    </Alarms>
+  </PutScalingPolicyResult>
+  <ResponseMetadata>
+    <RequestId>0b13ff1f-8131-4684-82fa-62d713ee2aa7</RequestId>
+  </ResponseMetadata>
+</PutScalingPolicyResponse>
+
