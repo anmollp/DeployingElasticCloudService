@@ -6,9 +6,9 @@
 4. A **VPC** has to be set up before proceeding to create an elastic cloud service, in your aws account.
 5. Screenshots of the aws monthly bills for February and March are attached.
 6. Use **deploy.py** script to automate the whole deployment of an elastic cloud service.
-7. **deploy.py** takes an argument called **Average CPU Utilization** that needs to be passed when calling the script as shown below:
+7. **deploy.py** takes an argument called **Average CPU Utilization** (value between 0 and 1) that needs to be passed when calling the script as shown below:
 
-      > ``python deploy.py 30``
+      > ``python deploy.py 0.3``
 8. The output of this script looks something like this:
 
       ![alt](/output.png)
