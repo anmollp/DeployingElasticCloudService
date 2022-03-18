@@ -11,3 +11,4 @@
 
       > ``python deploy.py 30``
 8. The output of this script looks something like this:
+      ![alt](/output.png)
