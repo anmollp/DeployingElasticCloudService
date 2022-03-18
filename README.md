@@ -9,9 +9,7 @@
 7. **deploy.py** takes an argument called **Average CPU Utilization** (value between 0 and 1) that needs to be passed when calling the script as shown below:
 
       > ``python deploy.py 0.3``
-8. The output of this script looks something like this:
-
-      ![alt](/output.png)
+8. Finally the output provides a **load balancer url** to connect to the service.
 
 ## List of libraries required to install/use before running script:
 1. requests_aws4auth
