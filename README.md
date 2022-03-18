@@ -12,3 +12,9 @@
 8. The output of this script looks something like this:
 
       ![alt](/output.png)
+
+## List of libraries required to install/use before running script:
+1. requests_aws4auth
+2. xml
+3. requests
+4. print_http
