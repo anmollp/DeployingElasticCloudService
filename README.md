@@ -1,6 +1,5 @@
 # DeployingElasticCloudService
 
-## Things to set up first:
 1. Set up your **aws access** and **secret keys** in your bash profile or bash rc file so that they can be used for authentication purposes.
 2. Use the **instance id** from **Homework2** for creating an image.
 3. Use the **print_http** library for printing request and response in a **messages.txt** file. The library is provided as a file **print_http.py**.
